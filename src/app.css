@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&family=Jim+Nightshade&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(243, 227, 236);
+    font-size: 1.3rem;
+    font-family: 'GFS Neohellenic', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Jim Nightshade';
+    color: rgb(58, 19, 38);
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    margin: 2rem;
+}
+.btn{
+    padding: 12px 14px;
+    background-color: rgb(172, 127, 143);
+    font-family: 'GFS Neohellenic', sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: rgb(37, 9, 25);
+    border: none;
+    border-radius: 15px;
+}
