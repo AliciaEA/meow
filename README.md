@@ -49,6 +49,9 @@ I didn't know where to say this, so why not make an entire section about it? Im 
 
 I like the Idea of Meow, and Im even waiting for Woof! You will se my submission there! Hehe~ byeee
 
-
+## Credits
+- Credits to Tom & Jerry for the Idea
+- Credits to the Mouse in my room
+- Credits to the creator of the img I have in the hero-background
 
 
