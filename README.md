@@ -3,7 +3,7 @@
 # Meow
 Hello! this is Meow Meow, it is a form of saying [cat]
 
-![Hackatime]()
+![Hackatime](https://hackatime-badge.hackclub.com/U091QQE2X26/meow)
 
 </div>
 
@@ -31,7 +31,9 @@ Meow is a website designed for #meow (Hackclub ysws). In here I talk about some 
 
 -Game: So basically... Have you ever heard of the flying cat? It is like a rainbow-like cat. I made a game about him, flying on the space, avoiding planets also like from the perspective of the mouse.
 
-- Flying [Rainbow] Cat...
+- Flying [Rainbow] Cat...> So it is the famous game that we all like, but you are running (or flying I might say) and trying to avoid planets and stars and obstacles in general. I find it fun. And if you want some lore, you are a mystical cat chasing a mouse. But since you are form another universe, you fly through atoms. So if you win (there is no ending Im sorry), you get to catch the mouse.
+
+- We are playing... right?? You are the mouse <The Game>: So now you are the mouse, being chased by the cat... It is an inspo from Tom & Jerry. Like if we are talking about cats, we HAVE to talk about Mice. So here is the perspective of the prey. It is allll inspired in Tom and Jerry, even the deco. So credits to ummm Tom & Jerry I guess. And also credits to the mouse in my room (jk... or not?)
 
 
 
