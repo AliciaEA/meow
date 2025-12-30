@@ -53,5 +53,9 @@ I like the Idea of Meow, and Im even waiting for Woof! You will se my submission
 - Credits to Tom & Jerry for the Idea
 - Credits to the Mouse in my room
 - Credits to the creator of the img I have in the hero-background
+- Also, credits to the creator of the cat Img in the intro, it is cute.
 
 
+## Meow Meow Bye
+
+Byeee tanks you for visiting my Meow website
