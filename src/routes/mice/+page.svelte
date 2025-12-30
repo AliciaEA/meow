@@ -1,6 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import { goto } from '$app/navigation';
+    import { base } from '$app/paths';
 
     let isPlaying = false;
     let isGameOver = false;
@@ -92,7 +93,7 @@
     }
 
     function goHome() {
-        goto('/');
+        goto(base + '/');
     }
 
     function resetGameVariables() {
