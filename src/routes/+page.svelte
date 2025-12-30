@@ -156,6 +156,60 @@
 
         <a href="./play" class="btn">Play with a Meow Meow</a>
     </section>
+
+    <section class="whole-paragraph">
+        <h2>Just some extra stuff... Ignore it or not</h2>
+        <h3>
+            Why do <span id="Pink">kittens meow</span> if adult cats don't do it to each other
+        </h3>
+        <p>
+           Kittens meow to alert their mother that they are cold, hungry, or lost. As they grow up, they stop doing this with other cats but keep the habit with humans because they see we respond to it (as if we are giant parents...)
+        </p>
+    </section>
+    <section class="whole-paragraph" id="second">
+        <h3>
+            Which cat breed is famous for being the most <span id="Pink">talkative and loud</span>?
+        </h3>
+        <p>The Siamese. they are known for having a very distinct, loud and low-pitched meow (sometimes sounding like a raspy baby's cry) and can hold "long conversations" with their owners</p>
+    </section>
+
+    <section class="whole-paragraph" id="second">
+        <h3>
+            What does a short, hight- pitched meow usually mean when <span id="Pink">they see you</span>?
+        </h3>
+        <p>It is a greeting. It is the cat's way of saying Hello or Whats up?</p>
+    </section>
+
+    <section class="whole-paragraph" id="second">
+        <h3>If a cat meows and chatters its teeth while looking at a bird through the window, <span id="Pink">what does it mean?</span></h3>
+        <p>Frustration or predatory excitement. It is not a typical meow; it is an instictive sound they make when they see pray they cannot reach. Some scientists believe they areusually mimicking the fatal bite to the prey's neck</p>
+    </section>
+
+    <section class="whole-paragraph" id="second">
+        <h3>Why do senior cats start meowing more <span id="Pink">at night?</span></h3>
+        <p>This is often due to cognitive dysfunction (senile dementia) or loss od vision/hearing. They feel disoriented in the dark and meow looking for a security or their owners</p>
+    </section>
+
+     <section class="circles container">
+        <h2>Weird</h2>
+        <div class="grid">
+            <div class="circle">
+                <span style="font-size: 1.5rem; font-weight:bold;">Short Meow</span>
+                <p>Hi!! (Greeting)</p>
+                
+            </div>
+            <div class="circle">
+                <span style="font-size: 1.5rem; font-weight:bold;">Repetitive Meow...</span>
+                <p>Look at me!, Pay attention, owner!, Im happy
+                </p>
+            </div>
+            <div class="circle">
+                <span style="font-size: 1.5rem; font-weight:bold;">Yowl...</span>
+                <p>Threatening another cat
+                </p>
+            </div>
+        </div>
+    </section>
 </main>
 
 <style>

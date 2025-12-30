@@ -24,6 +24,8 @@ Meow is a website designed for #meow (Hackclub ysws). In here I talk about some 
 - Fun Facts: Did you know...? ahh section. Broo, I told you I'm not giving you catnip. 
 - Meow...: Meow? It turns out it is a whole new language. Whatttt
 - Meet Meow Meow
+- Some extra stuff I wanted to add to the project. Like some curious question you might ask yourself
+- Weird. I was bored so I made this huh
 
 ### Play
 
