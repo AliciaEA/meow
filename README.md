@@ -1,38 +1,46 @@
-# sv
+<div align="center">
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+# Meow
+Hello! this is Meow Meow, it is a form of saying [cat]
 
-## Creating a project
+![Hackatime]()
 
-If you're seeing this, you've probably already done this step. Congrats!
+</div>
 
-```sh
-# create a new project in the current directory
-npx sv create
+--- 
+## Description
 
-# create a new project in my-app
-npx sv create my-app
-```
+Meow is a website designed for #meow (Hackclub ysws). In here I talk about some facts, funny things, important information, meows...?, and much more!
 
-## Developing
+--- 
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Website Structure
 
-```sh
-npm run dev
+### Main Page
+- Hero: Okay we have a cute hero with a background image. And also some css:hover here and there
+- Introduction: A paragraph explaining Meow vibe.
+- Information: We have just some unformation. if you thought you knew about cats... let me tell you, you are wrong. Sorry, buddy!
+- Pink Questions: Ummm excuse me Sir, why do you meow? Oh! It turns out you just Meow for meee??? That is truly love
+- Fun Facts: Did you know...? ahh section. Broo, I told you I'm not giving you catnip. 
+- Meow...: Meow? It turns out it is a whole new language. Whatttt
+- Meet Meow Meow
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+### Play
 
-## Building
+-Game: So basically... Have you ever heard of the flying cat? It is like a rainbow-like cat. I made a game about him, flying on the space, avoiding planets. 
 
-To create a production version of your app:
+---
 
-```sh
-npm run build
-```
+## International Submission
 
-You can preview the production build with `npm run preview`.
+I didn't know where to say this, so why not make an entire section about it? Im not from the US so please give me the grant, or else Im cooked. Sorry.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+---
+
+## Meow YSWS
+
+I like the Idea of Meow, and Im even waiting for Woof! You will se my submission there! Hehe~ byeee
+
+
+
+

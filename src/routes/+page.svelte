@@ -119,6 +119,43 @@
             </div>
         </div>
     </section>
+
+    <section class="container">
+        <h2>Meow... an exclusive language</h2>
+        <p>
+            Adult cats almost never meow at each other. They use meowing
+            exclusively to communicate with humans. Among themselves, they use
+            body, scent and other sounds (like hissing or yowling, but the
+            classic meow is to get youw attention)
+        </p>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Acoustic manipulation</h3>
+                <p>Some cats have perfected a special meo that mices a purr with high-pitched cry. This sound has a frequency similar to a human baby's cry, mahing it almost impossible for us to ignore (our brains are hardwire) to respond to that tone</p>
+            </div>
+
+            <div class="card">
+                <h3>The silent Meow</h3>
+                <p>
+                    Sometimes a cat opens its mouth to meow but no sound comes out. Actually, they are meowing, but it is so high pitched that the human ear cannot hear it, although other animals might. It is also belived thay use it when they are exhausted or to show submission
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Unique Vocabulary</h3>
+                <p>There is no universal cat language. Each cat developes its own set of meows and tones specific to their owner. The meow your cat uses to ask for food is different from the one another cat uses in a different house</p>
+            </div>
+        </div>
+
+        
+    </section>
+
+    <section class="container" style="text-align: center; margin-bottom:8rem; margin-top:8rem;">
+        <h2>Do you want to meet a <span id="Pink">Meow Meow?</span></h2>
+
+        <a href="./play" class="btn">Play with a Meow Meow</a>
+    </section>
 </main>
 
 <style>
@@ -207,46 +244,46 @@
         padding: 5px 25px;
     }
 
-    #Pink:hover{
+    #Pink:hover {
         background-color: rgb(194, 91, 134);
         border-radius: 20px;
         color: rgb(248, 182, 199);
         text-decoration: none;
     }
 
-    #second{
+    #second {
         margin-top: -5.5rem;
         border-top: rgb(196, 27, 97) 2px dotted;
     }
 
     /* Other facts */
 
-    #paragraphs{
+    #paragraphs {
         margin-top: -8rem;
     }
 
-    .card{
+    .card {
         background-color: rgb(216, 121, 142);
         border-radius: 80px;
         padding: 40px;
         border: 3px rgb(139, 60, 77) solid;
     }
 
-    .card:hover{
+    .card:hover {
         background-color: rgb(238, 170, 170);
         border: 3px rgb(170, 88, 106) dotted;
     }
 
     /* Circles Section */
-    .circles{
+    .circles {
         margin: 10rem 0;
         text-align: center;
     }
 
-    .circle{
+    .circle {
         padding: 20px;
     }
-    .circle span{
+    .circle span {
         background-color: rgb(224, 176, 201);
         padding: 60px;
         border-radius: 100px;
@@ -254,7 +291,7 @@
         color: rgb(146, 10, 78);
     }
 
-    .circle span:hover{
+    .circle span:hover {
         background-color: rgb(196, 27, 97);
         color: rgb(255, 222, 238);
         padding: 70px;
@@ -262,9 +299,9 @@
         font-size: 3.2rem;
     }
 
-   /* MEDIA */
+    /* MEDIA */
 
-   @media (max-width: 999px) {
+    @media (max-width: 999px) {
         .intro {
             flex-direction: column;
             grid-template-columns: 1fr;
