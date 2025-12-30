@@ -5,6 +5,9 @@ Hello! this is Meow Meow, it is a form of saying [cat]
 
 ![Hackatime](https://hackatime-badge.hackclub.com/U091QQE2X26/meow)
 
+<img width="868" height="837" alt="image" src="https://github.com/user-attachments/assets/19f94d8c-2391-48d6-82f0-867d921692a6" />
+
+
 </div>
 
 --- 
