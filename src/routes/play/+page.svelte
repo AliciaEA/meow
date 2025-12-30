@@ -1,13 +1,12 @@
 <script>
-    const gameContainer = document.getElementById("game-container");
-    const player = document.getElementById("player");
-    const scoreDisplay = document.getElementById("score");
-    const finalScoreDisplay = document.getElementById("final-score");
-    const startScreen = document.getElementById("start-screen");
-    const gameOverScreen = document.getElementById("game-over-screen");
+    import { onMount } from 'svelte';
+    import { goto } from '$app/navigation';
 
     let isPlaying = false;
+    let isGameOver = false;
     let score = 0;
+    let finalScore = 0;
+
     let obstacleSpeed = 4;
     let obstacleInterval;
     let gameLoopId;
@@ -20,13 +19,9 @@
     let isMovingLeft = false;
     let isMovingRight = false;
 
-    gameContainer.addEventListener("touchstart", handleTouch, {
-        passive: false,
-    });
-    gameContainer.addEventListener("touchend", stopTouch, { passive: false });
-    gameContainer.addEventListener("touchcancel", stopTouch, {
-        passive: false,
-    });
+    // Bound DOM elements
+    let gameContainer;
+    let player;
 
     function handleTouch(e) {
         if (!isPlaying) return;
@@ -49,33 +44,31 @@
         }
     }
 
-    document.addEventListener("keydown", (e) => {
+    function handleKeyDown(e) {
         if (!isPlaying) return;
-        if (e.key === "ArrowLeft") {
+        if (e.key === 'ArrowLeft') {
             isMovingLeft = true;
         }
-        if (e.key === "ArrowRight") {
+        if (e.key === 'ArrowRight') {
             isMovingRight = true;
         }
-    });
+    }
 
-    document.addEventListener("keyup", (e) => {
-        if (e.key == "ArrowLeft") {
+    function handleKeyUp(e) {
+        if (e.key === 'ArrowLeft') {
             isMovingLeft = false;
         }
-        if (e.key === "ArrowRight") {
+        if (e.key === 'ArrowRight') {
             isMovingRight = false;
         }
-    });
+    }
 
-    // Game Logiccc
+    // Game Logic
     function startGame() {
-        startScreen.classList.add("hidden");
-        gameOverScreen.classList.add("hidden");
         isPlaying = true;
+        isGameOver = false;
         score = 0;
         obstacleSpeed = 5;
-        scoreDisplay.innerText = score;
 
         playerPositionPercent = 50;
         updatePlayerPosition();
@@ -93,12 +86,15 @@
     }
 
     function exitToMenu() {
-        gameOverScreen.classList.add("hidden");
-        startScreen.classList.remove("hidden");
         isPlaying = false;
+        isGameOver = false;
         obstacles.forEach((obs) => obs.element.remove());
         obstacles = [];
         resetGameVariables();
+    }
+
+    function goHome() {
+        goto('/');
     }
 
     function resetGameVariables() {
@@ -111,7 +107,7 @@
     }
 
     function spawnObstacle() {
-        if (!isPlaying) return;
+        if (!isPlaying || !gameContainer) return;
         const obstacle = document.createElement("div");
         obstacle.classList.add("obstacle");
 
@@ -126,14 +122,17 @@
         obstacles.push({ element: obstacle, y: -60 });
     }
 
-    if (score > 0 && socre % 5 === 0) {
-        obstacleSpeed += 0.3;
-        clearInterval(obstacleInterval);
-        let newTime = Math.max(500, 1000 - score * 20);
-        obstacleInterval = setInterval(spawnObstacle, newTime);
+    function adjustDifficulty() {
+        if (score > 0 && score % 5 === 0) {
+            obstacleSpeed += 0.3;
+            clearInterval(obstacleInterval);
+            const newTime = Math.max(500, 1000 - score * 20);
+            obstacleInterval = setInterval(spawnObstacle, newTime);
+        }
     }
 
     function updatePlayerPosition() {
+        if (!player) return;
         if (playerPositionPercent < 6) playerPositionPercent = 6;
         if (playerPositionPercent > 94) playerPositionPercent = 94;
         player.style.left = playerPositionPercent + "%";
@@ -151,25 +150,27 @@
             obs.y += obstacleSpeed;
             obs.element.style.top = obs.y + "px";
 
-            const playerRect = player.getBoundingClientRect();
-            const obsRect = obs.element.getBoundingClientRect();
-            const hitboxPaddingX = 20;
-            const hitboxPaddingY = 15;
+            if (player) {
+                const playerRect = player.getBoundingClientRect();
+                const obsRect = obs.element.getBoundingClientRect();
+                const hitboxPaddingX = 20;
+                const hitboxPaddingY = 15;
 
-            if (
-                playerRect.top + hitboxPaddingY < obsRect.bottom &&
-                playerRect.bottom - hitboxPaddingY > obsRect.top &&
-                playerRect.left + hitboxPaddingX < obsRect.right &&
-                playerRect.right - hitboxPaddingX > obsRect.left
-            ) {
-                gameOver();
+                if (
+                    playerRect.top + hitboxPaddingY < obsRect.bottom &&
+                    playerRect.bottom - hitboxPaddingY > obsRect.top &&
+                    playerRect.left + hitboxPaddingX < obsRect.right &&
+                    playerRect.right - hitboxPaddingX > obsRect.left
+                ) {
+                    gameOver();
+                }
             }
 
-            if (obs.y > gameContainer.offsetHeight) {
+            if (gameContainer && obs.y > gameContainer.offsetHeight) {
                 obs.element.remove();
                 obstacles.splice(index, 1);
                 score++;
-                scoreDisplay.innerText = score;
+                adjustDifficulty();
             }
         });
         gameLoopId = requestAnimationFrame(gameLoop);
@@ -177,18 +178,23 @@
 
     function gameOver() {
         isPlaying = false;
+        finalScore = score;
+        isGameOver = true;
         resetGameVariables();
-        finalScoreDisplay.innerText = score;
-        gameOverScreen.classList.remove("hidden");
     }
-    updatePlayerPosition();
+
+    onMount(() => {
+        updatePlayerPosition();
+    });
 </script>
 
+<svelte:window on:keydown={handleKeyDown} on:keyup={handleKeyUp} />
 <main>
-    <div id="game-container">
-        <div id="score-board">Score: <span id="score">0</span></div>
 
-        <div id="start-screen">
+    <div id="game-container" bind:this={gameContainer} on:touchstart|preventDefault={handleTouch} on:touchend={stopTouch} on:touchcancel={stopTouch}>
+        <div id="score-board">Score: <span id="score">{score}</span></div>
+
+        <div id="start-screen" class:hidden={isPlaying || isGameOver}>
             <div style="font-size: 70px; margin-bottom: 10px;">🐱🌈</div>
             <h1>Space Meow Meow</h1>
             <p class="subtitle">
@@ -198,24 +204,25 @@
             <p style="font-size: 0.8rem; color: #aaa; margin-top:30px;">
                 Tap Left/Right
             </p>
-            <button onclick={startGame()}>Play</button>
+            <button on:click={startGame}>Play</button>
+            <button class="secondary" on:click={goHome}>Meow Home</button>
         </div>
 
-        <div id="game-over-screen" class="hidden">
+        <div id="game-over-screen" class:hidden={!isGameOver}>
             <h1>Game Over</h1>
-
             <p class="game-over-text">You hit a planet! 💥</p>
             <p class="game-over-text">
-                Final Score: <span id="final-score">0</span>
+                Final Score: <span id="final-score">{finalScore}</span>
             </p>
 
             <div class="button-container">
-                <button onclick={startGame()}>Try Again</button>
-                <button class="secondary" onclick={exitToMenu()}>Exit</button>
+                <button on:click={startGame}>Try Again</button>
+                <button class="secondary" on:click={exitToMenu}>Exit</button>
+                <button class="secondary" on:click={goHome}>Meow Home</button>
             </div>
         </div>
 
-        <div id="player">
+        <div id="player" bind:this={player}>
             <div class="rainbow">
                 <div class="r-stripe r1"></div>
                 <div class="r-stripe r2"></div>
@@ -249,8 +256,8 @@
 </main>
 
 <style>
-    body {
-        background-color: #000;
+    main {
+        
         overflow: hidden;
         touch-action: none;
         display: flex;
@@ -259,7 +266,7 @@
         height: 100vh;
         -webkit-user-select: none;
         user-select: none;
-        color: white;
+        
     }
 
     #game-container {
@@ -319,7 +326,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(12, 41, 0.95);
+        background: rgb(116, 86, 100);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -347,7 +354,7 @@
         text-shadow: 1px 1px 0 #000;
     }
 
-    #game-over-text {
+    .game-over-text {
         color: #ff6b6b;
         font-size: 1.5rem;
         margin-bottom: 20px;
@@ -583,7 +590,7 @@
         } to {margin-bottom: 5px;}
     }
 
-    .obstacle{
+    :global(.obstacle){
         position: absolute;
         font-size: 40px;
         text-align: center;
