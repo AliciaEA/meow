@@ -8,6 +8,7 @@
                 get to know them, find them cute. Welcome, to Meow Cat
             </p>
             <a href="./play" class="btn">Skip and Play</a>
+            <a href="./mice" class="btn">Play but as a Mouse</a>
         </div>
     </section>
 
@@ -155,6 +156,7 @@
         <h2>Do you want to meet a <span id="Pink">Meow Meow?</span></h2>
 
         <a href="./play" class="btn">Play with a Meow Meow</a>
+        <a href="./mice" class="btn">Play but you are the Mouse</a>
     </section>
 
     <section class="whole-paragraph">

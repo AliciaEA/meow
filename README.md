@@ -29,7 +29,11 @@ Meow is a website designed for #meow (Hackclub ysws). In here I talk about some 
 
 ### Play
 
--Game: So basically... Have you ever heard of the flying cat? It is like a rainbow-like cat. I made a game about him, flying on the space, avoiding planets. 
+-Game: So basically... Have you ever heard of the flying cat? It is like a rainbow-like cat. I made a game about him, flying on the space, avoiding planets also like from the perspective of the mouse.
+
+- Flying [Rainbow] Cat...
+
+
 
 ---
 
